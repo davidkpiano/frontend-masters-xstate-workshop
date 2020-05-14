@@ -2,7 +2,7 @@ import { createMachine } from 'xstate';
 
 const elOutput = document.querySelector('#output');
 
-function output(object) {
+const output = object => {
   elOutput.innerHTML = JSON.stringify(user, null, 2);
 }
 
