@@ -1,0 +1,24 @@
+@import '../styles/index.scss';
+
+#box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  &[data-state='pending'] {
+    background: orange;
+
+    > span {
+      opacity: 0;
+    }
+  }
+
+  &[data-state='resolved'] {
+    background: green;
+  }
+
+  &[data-state='rejected'] {
+    background: red;
+  }
+}
