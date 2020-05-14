@@ -14,13 +14,22 @@ const machine = createMachine({
   //   px: 0,
   //   py: 0,
   // }
-  // context: ...,
+  context: {
+    x: 0,
+    y: 0,
+    dx: 0,
+    dy: 0,
+    px: 0,
+    py: 0,
+  },
   states: {
     idle: {
       on: {
         mousedown: {
-          // Assign the point
-          // ...
+          actions: assign({
+            px: (context, event) => event.clientX,
+            py: (context, event) => event.clientY,
+          }),
           target: 'dragging',
         },
       },
@@ -28,13 +37,39 @@ const machine = createMachine({
     dragging: {
       on: {
         mousemove: {
-          // Assign the delta
-          // ...
+          actions: assign({
+            dx: (context, event) => {
+              return event.clientX - context.px;
+            },
+            dy: (context, event) => {
+              return event.clientY - context.py;
+            },
+          }),
           // (no target!)
         },
         mouseup: {
-          // Assign the position
+          actions: assign({
+            x: (context) => {
+              return context.x + context.dx;
+            },
+            y: (context) => {
+              return context.y + context.dy;
+            },
+            dx: 0,
+            dy: 0,
+            px: 0,
+            py: 0,
+          }),
           target: 'idle',
+        },
+        'keyup.escape': {
+          target: 'idle',
+          actions: assign({
+            dx: 0,
+            dy: 0,
+            px: 0,
+            py: 0,
+          }),
         },
       },
     },
@@ -47,6 +82,7 @@ service.onTransition((state) => {
   if (state.changed) {
     console.log(state.context);
 
+    // data-state="dragging"
     elBox.dataset.state = state.value;
 
     elBox.style.setProperty('--dx', state.context.dx);
@@ -59,6 +95,14 @@ service.onTransition((state) => {
 service.start();
 
 // Add event listeners for:
-// - mousedown on elBox
-// - mousemove on elBody
-// - mouseup on elBody
+elBox.addEventListener('mousedown', service.send);
+elBody.addEventListener('mousemove', service.send);
+elBody.addEventListener('mouseup', service.send);
+
+elBody.addEventListener('keyup', (e) => {
+  if (e.key === 'Escape') {
+    service.send({
+      type: 'keyup.escape',
+    });
+  }
+});

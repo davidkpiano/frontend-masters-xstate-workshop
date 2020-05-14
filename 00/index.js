@@ -1,53 +1,29 @@
-import { createMachine } from 'xstate';
+import { createMachine, interpret } from 'xstate';
 
-const elOutput = document.querySelector('#output');
-
-function output(object) {
-  elOutput.innerHTML = JSON.stringify(user, null, 2);
-}
-
-console.log('Welcome to the XState workshop!');
-
-const user = {
-  name: 'David Khourshid',
-  company: 'Microsoft',
-  interests: ['piano', 'state machines', 'animation'],
-};
-
-// output(user);
-
-const machine = {
-  initial: 'idle',
+const feedbackMachine = createMachine({
+  initial: 'question',
   states: {
-    idle: {
+    question: {
       on: {
-        FETCH: 'pending',
+        CLICK_GOOD: {
+          target: 'thanks',
+        },
       },
     },
-    pending: {
-      on: {
-        RESOLVE: 'resolved',
-        REJECT: 'rejected',
-      },
-    },
-    resolved: {},
-    rejected: {},
+    form: {},
+    thanks: {},
+    closed: {},
   },
-};
+});
 
-const transition = (state, event) => {
-  return machine.states[state]?.on?.[event] || state;
-};
+const feedbackService = interpret(feedbackMachine);
 
-// 'idle'
-let currentState = machine.initial;
+feedbackService.onTransition((state) => {
+  console.log(state.value);
+});
 
-const send = (event) => {
-  const nextState = transition(currentState, event);
+feedbackService.start();
 
-  console.log(nextState);
-
-  currentState = nextState;
-};
-
-window.send = send;
+feedbackService.send({
+  type: 'CLICK_GOOD',
+});
