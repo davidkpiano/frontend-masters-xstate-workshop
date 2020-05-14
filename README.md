@@ -37,3 +37,7 @@ To navigate to a rendered exercise in the browser, change the directory in the U
 - Exercise 04: [📄 Readme](./04/README.md) | [🔗 Link](http://localhost:1234/04/index.html)
 - Exercise 05: [📄 Readme](./05/README.md) | [🔗 Link](http://localhost:1234/05/index.html)
 - Exercise 06: [📄 Readme](./06/README.md) | [🔗 Link](http://localhost:1234/06/index.html)
+- Exercise 07: [📄 Readme](./07/README.md) | [🔗 Link](http://localhost:1234/07/index.html)
+- Exercise 08: [📄 Readme](./08/README.md) | [🔗 Link](http://localhost:1234/08/index.html)
+- Exercise 09: [📄 Readme](./09/README.md) | [🔗 Link](http://localhost:1234/09/index.html)
+- Exercise 10: [📄 Readme](./10/README.md) | [🔗 Link](http://localhost:1234/10/index.html)
