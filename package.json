@@ -1,0 +1,29 @@
+{
+  "name": "frontend-masters-xstate-workshop",
+  "version": "1.0.0",
+  "description": "Frontend Masters XState Workshop",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run start:parcel",
+    "start:parcel": "parcel **/*.html",
+    "start:styles": "sass --watch ./styles/index.scss ./styles/index.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidkpiano/frontend-masters-xstate-workshop.git"
+  },
+  "author": "David Khourshid",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davidkpiano/frontend-masters-xstate-workshop/issues"
+  },
+  "homepage": "https://github.com/davidkpiano/frontend-masters-xstate-workshop#readme",
+  "dependencies": {
+    "xstate": "^4.9.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "sass": "^1.26.5"
+  }
+}
