@@ -37,46 +37,56 @@ const resetPosition = assign({
   py: 0,
 });
 
-const dragDropMachine = createMachine({
-  initial: 'idle',
-  context: {
-    x: 0,
-    y: 0,
-    dx: 0,
-    dy: 0,
-    px: 0,
-    py: 0,
-  },
-  states: {
-    idle: {
-      on: {
-        mousedown: {
-          actions: assignPoint,
-          target: 'dragging',
+const dragDropMachine = createMachine(
+  {
+    initial: 'idle',
+    context: {
+      x: 0,
+      y: 0,
+      dx: 0,
+      dy: 0,
+      px: 0,
+      py: 0,
+    },
+    states: {
+      idle: {
+        on: {
+          mousedown: {
+            actions: assignPoint,
+            target: 'dragging',
+          },
+        },
+      },
+      dragging: {
+        on: {
+          mousemove: {
+            actions: assignDelta,
+            internal: false,
+          },
+          mouseup: {
+            actions: [assignPosition],
+            target: 'idle',
+          },
+          'keyup.escape': {
+            target: 'idle',
+            actions: resetPosition,
+          },
+        },
+        after: {
+          TIMEOUT: {
+            target: 'idle',
+            actions: resetPosition,
+          },
         },
       },
     },
-    dragging: {
-      on: {
-        mousemove: {
-          actions: assignDelta,
-          internal: false,
-        },
-        mouseup: {
-          actions: [assignPosition],
-          target: 'idle',
-        },
-        'keyup.escape': {
-          target: 'idle',
-          actions: resetPosition,
-        },
-      },
-      // Transition to 'idle' after 2 seconds
-      // using a delayed transition.
-      // ...
-    },
   },
-});
+  {
+    delays: {
+      TIMEOUT: 2000,
+    },
+  }
+);
 
 const service = interpret(dragDropMachine);
 
