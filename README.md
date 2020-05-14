@@ -29,3 +29,11 @@ Exercises are separated by directory. The first lesson is at [`01/index.js`](./0
 If you get lost, refer to the `index.final.js` file in each directory.
 
 To navigate to a rendered exercise in the browser, change the directory in the URL (`http://localhost:1234/[dir]/index.html`). The first lesson is located at [http://localhost:1234/00/index.html](http://localhost:1234/01/index.html).
+
+- Welcome (📝): [📄 Readme](./00/README.md) | [🔗 Link](http://localhost:1234/00/index.html)
+- Exercise 01: [📄 Readme](./01/README.md) | [🔗 Link](http://localhost:1234/01/index.html)
+- Exercise 02: [📄 Readme](./02/README.md) | [🔗 Link](http://localhost:1234/02/index.html)
+- Exercise 03: [📄 Readme](./03/README.md) | [🔗 Link](http://localhost:1234/03/index.html)
+- Exercise 04: [📄 Readme](./04/README.md) | [🔗 Link](http://localhost:1234/04/index.html)
+- Exercise 05: [📄 Readme](./05/README.md) | [🔗 Link](http://localhost:1234/05/index.html)
+- Exercise 06: [📄 Readme](./06/README.md) | [🔗 Link](http://localhost:1234/06/index.html)
