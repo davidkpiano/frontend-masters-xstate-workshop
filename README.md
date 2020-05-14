@@ -8,11 +8,18 @@ Welcome to the [Frontend Masters](https://frontendmasters.com/) workshop on **Ja
 - Identify and eliminate edge cases
 - Visualize your logic as state machine diagrams
 
+## XState
+
+- GitHub repo: https://github.com/davidkpiano/xstate
+- Documentation: http://xstate.js.org/docs
+- Visualizer: http://xstate.js.org/viz
+
 ## Getting Started
 
 To run this workshop:
 
 - Clone this repo
+- You need to have `parcel` installed. To do this, run `npm install -g parcel-bundler`.
 - In the repo's directory, run `npm install`
 - Run `npm start`. You should see this:
 
