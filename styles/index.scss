@@ -86,3 +86,15 @@ h1 {
   border: none;
   font-weight: bold;
 }
+
+button {
+  appearance: none;
+  font-size: 1rem;
+  background: var(--color-primary);
+  color: white;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
