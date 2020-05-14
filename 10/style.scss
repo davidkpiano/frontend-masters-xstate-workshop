@@ -1,0 +1,65 @@
+@import '../styles/index.scss';
+
+#app {
+  --color-bg: white;
+  --color-fg: black;
+  --brightness: 1;
+
+  flex-direction: column;
+  &:before {
+    content: attr(data-state);
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 0.5rem;
+    background: black;
+    font-family: monospace;
+    color: white;
+    padding: 0.25rem;
+    border-radius: inherit;
+    white-space: nowrap;
+  }
+  &[data-state~='hidden'] {
+    #display {
+      opacity: 0;
+      transform: translateY(50%);
+    }
+  }
+
+  &[data-state~='visible'] {
+    #display {
+      transform: none;
+    }
+  }
+
+  &[data-state~='visible.mode.dark'] {
+    --color-bg: black;
+    --color-fg: white;
+  }
+
+  &[data-state~='visible.brightness.dim'] {
+    --brightness: 0.5;
+  }
+}
+
+#display {
+  padding: 2rem;
+  border-radius: 1rem;
+  background: var(--color-bg);
+  color: var(--color-fg);
+  border: 2px solid var(--color-fg);
+  opacity: var(--brightness);
+  transition: all 0.6s ease;
+}
+
+button {
+  --color: blue;
+  appearance: none;
+  background: var(--color);
+  color: white;
+  font-weight: bold;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  margin: 1rem;
+}
