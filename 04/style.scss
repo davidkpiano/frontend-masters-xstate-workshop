@@ -1,0 +1,22 @@
+@import '../styles/index.scss';
+
+#box {
+  opacity: 0.5;
+
+  &[data-state='active'] {
+    opacity: 1;
+  }
+
+  &:before {
+    content: attr(data-point);
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 0.5rem;
+    left: 0;
+    background: black;
+    padding: 0.25rem;
+    color: white;
+    font-family: monospace;
+    border-radius: inherit;
+  }
+}

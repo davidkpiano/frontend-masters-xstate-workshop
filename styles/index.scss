@@ -9,6 +9,7 @@ html {
   width: 100%;
   margin: 0;
   padding: 0;
+  font-size: 21px;
 }
 
 body {
@@ -27,14 +28,27 @@ h1 {
 }
 
 #box {
-  height: 20vmin;
-  width: 20vmin;
+  height: 25vmin;
+  width: 25vmin;
   background-color: #41a9f3;
   left: calc(var(--x) * 1px);
   top: calc(var(--y) * 1px);
   transform: translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px));
   box-shadow: 0 0 0px rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
+
+  &:after {
+    content: 'state: ' attr(data-state);
+    position: absolute;
+    top: 100%;
+    margin-top: 0.5rem;
+    background: black;
+    font-family: monospace;
+    color: white;
+    padding: 0.25rem;
+    border-radius: inherit;
+    white-space: nowrap;
+  }
 }
 
 #box[data-state^='dragging'] {
