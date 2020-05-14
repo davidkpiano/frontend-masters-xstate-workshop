@@ -19,7 +19,6 @@
     border-radius: inherit;
     white-space: nowrap;
   }
-  &:not([data-state]),
   &[data-state~='hidden'] {
     #display {
       opacity: 0;
@@ -33,9 +32,13 @@
     }
   }
 
-  &[data-state~='visible.dark'] {
+  &[data-state~='visible.mode.dark'] {
     --color-bg: black;
     --color-fg: white;
+  }
+
+  &[data-state~='visible.brightness.dim'] {
+    --brightness: 0.5;
   }
 }
 

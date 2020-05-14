@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+
 * {
   position: relative;
   box-sizing: border-box;
@@ -14,11 +16,23 @@ html {
   margin: 0;
   padding: 0;
   font-size: 21px;
+  font-family: 'Jost', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
   display: grid;
   grid-template-rows: auto 1fr;
+  grid-template-columns: 3rem 1fr 3rem;
+  grid-template-areas: 'l header r' 'l main r';
+
+  > main {
+    grid-area: main;
+  }
+
+  > header {
+    grid-area: header;
+  }
 }
 
 main {

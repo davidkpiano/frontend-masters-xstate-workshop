@@ -5,61 +5,37 @@ const elOffButton = document.querySelector('#offButton');
 const elOnButton = document.querySelector('#onButton');
 const elModeButton = document.querySelector('#modeButton');
 
-const displayMachine = createMachine(
-  {
-    initial: 'hidden',
-    states: {
-      hidden: {
-        on: {
-          TURN_ON: 'visible',
+const displayMachine = createMachine({
+  initial: 'hidden',
+  states: {
+    hidden: {
+      on: {
+        TURN_ON: 'visible.hist',
+      },
+    },
+    visible: {
+      initial: 'light',
+      states: {
+        light: {
+          on: {
+            SWITCH: 'dark',
+          },
+        },
+        dark: {
+          on: {
+            SWITCH: 'light',
+          },
+        },
+        hist: {
+          type: 'history',
         },
       },
-      visible: {
-        type: 'parallel',
-        on: {
-          TURN_OFF: 'hidden',
-        },
-        states: {
-          mode: {
-            initial: 'light',
-            states: {
-              light: {
-                on: {
-                  SWITCH: 'dark',
-                },
-              },
-              dark: {
-                on: {
-                  SWITCH: 'light',
-                },
-              },
-            },
-          },
-          brightness: {
-            initial: 'bright',
-            states: {
-              bright: {
-                after: {
-                  TIMEOUT: 'dim',
-                },
-              },
-              dim: {
-                on: {
-                  SWITCH: 'bright',
-                },
-              },
-            },
-          },
-        },
+      on: {
+        TURN_OFF: 'hidden',
       },
     },
   },
-  {
-    delays: {
-      TIMEOUT: 5000,
-    },
-  }
-);
+});
 
 const displayService = interpret(displayMachine)
   .onTransition((state) => {
