@@ -38,49 +38,75 @@ const resetPosition = assign({
   py: 0,
 });
 
-const dragDropMachine = createMachine({
-  // The initial state should check auth status instead.
-  initial: 'idle',
-  context: {
-    x: 0,
-    y: 0,
-    dx: 0,
-    dy: 0,
-    px: 0,
-    py: 0,
-    user: undefined,
-  },
-  states: {
-    // Add two states:
-    // - checkingAuth (with transient transitions)
-    // - unauthorized
-    idle: {
-      on: {
-        mousedown: {
-          actions: assignPoint,
-          target: 'dragging',
-        },
-      },
-    },
-    dragging: {
-      on: {
-        mousemove: {
-          actions: assignDelta,
-        },
-        mouseup: {
-          actions: [assignPosition],
-          target: 'idle',
-        },
-        'keyup.escape': {
-          target: 'idle',
-          actions: resetPosition,
-        },
-      },
-    },
-  },
-});
+const isAuthorized = (context) => {
+  return !!context.user;
+};
 
-const service = interpret(dragDropMachine);
+const createDragDropMachine = (user) =>
+  createMachine({
+    initial: 'checkingAuth',
+    context: {
+      x: 0,
+      y: 0,
+      dx: 0,
+      dy: 0,
+      px: 0,
+      py: 0,
+      user,
+    },
+    states: {
+      checkingAuth: {
+        on: {
+          '': [
+            {
+              cond: isAuthorized,
+              target: 'idle',
+            },
+            {
+              target: 'unauthorized',
+            },
+          ],
+        },
+      },
+      unauthorized: {
+        on: {
+          SIGN_IN: {
+            target: 'checkingAuth',
+            actions: assign({
+              user: (_, event) => {
+                return event.user;
+              },
+            }),
+          },
+        },
+      },
+      idle: {
+        on: {
+          mousedown: {
+            actions: assignPoint,
+            target: 'dragging',
+          },
+        },
+      },
+      dragging: {
+        on: {
+          mousemove: {
+            actions: assignDelta,
+          },
+          mouseup: {
+            actions: [assignPosition],
+            target: 'idle',
+          },
+          'keyup.escape': {
+            target: 'idle',
+            actions: resetPosition,
+          },
+        },
+      },
+    },
+  });
+
+const service = interpret(createDragDropMachine(null));
 
 service.onTransition((state) => {
   elBox.dataset.state = state.value;
@@ -113,4 +139,13 @@ elBody.addEventListener('keyup', (e) => {
   if (e.key === 'Escape') {
     service.send('keyup.escape');
   }
+});
+
+elButton.addEventListener('click', () => {
+  service.send({
+    type: 'SIGN_IN',
+    user: {
+      name: 'David',
+    },
+  });
 });
