@@ -32,6 +32,11 @@ const displayService = interpret(displayMachine)
   })
   .start();
 
+// Add event listeners for:
+// - clicking elOnButton (TURN_ON)
+// - clicking elOffButton (TURN_OFF)
+// - clicking elModeButton (SWITCH)
+
 elOnButton.addEventListener('click', () => {
   displayService.send('TURN_ON');
 });
