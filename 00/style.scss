@@ -1,1 +1,7 @@
 @import '../styles/index.scss';
+
+#button {
+  &[disabled] {
+    opacity: 0.5;
+  }
+}

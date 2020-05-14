@@ -17,6 +17,7 @@ let currentState = undefined;
 function send(event) {
   // Determine the next value of `currentState`
 
+  // [data-state="inactive"]
   elBox.dataset.state = currentState;
 }
 
