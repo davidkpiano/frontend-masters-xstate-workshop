@@ -1,5 +1,7 @@
 const elBox = document.querySelector('#box');
 
+// Pure function that returns the next state,
+// given the current state and sent event
 function transition(state, event) {
   switch (
     state
@@ -11,12 +13,6 @@ function transition(state, event) {
 
 // Keep track of your current state
 let currentState = undefined;
-
-// Pure function that returns the next state,
-// given the current state and sent event
-function transition(state, event) {
-  // ...
-}
 
 function send(event) {
   // Determine the next value of `currentState`
