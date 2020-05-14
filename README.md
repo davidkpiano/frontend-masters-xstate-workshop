@@ -13,6 +13,7 @@ Welcome to the [Frontend Masters](https://frontendmasters.com/) workshop on **Ja
 To run this workshop:
 
 - Clone this repo
+- You need to have `parcel` installed. To do this, run `npm install -g parcel-bundler`.
 - In the repo's directory, run `npm install`
 - Run `npm start`. You should see this:
 
