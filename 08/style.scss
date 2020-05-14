@@ -1,0 +1,23 @@
+@import '../styles/index.scss';
+
+#box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &[data-state='active'] {
+    opacity: 1;
+  }
+
+  #button {
+    display: none;
+  }
+
+  &[data-state='unauthorized'] {
+    background: red;
+
+    #button {
+      display: block;
+    }
+  }
+}
