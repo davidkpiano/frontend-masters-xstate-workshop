@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-primary: #41a9f3;
+}
+
 body,
 html {
   height: 100%;
@@ -30,7 +34,7 @@ h1 {
 #box {
   height: 25vmin;
   width: 25vmin;
-  background-color: #41a9f3;
+  background-color: var(--color-primary);
   left: calc(var(--x) * 1px);
   top: calc(var(--y) * 1px);
   transform: translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px));
@@ -58,4 +62,13 @@ h1 {
 
 #box[data-state='idle'] {
   transition: all 0.3s ease-in-out;
+}
+
+#button {
+  appearance: none;
+  background: var(--color-primary);
+  color: white;
+  padding: 1rem;
+  border: none;
+  font-weight: bold;
 }
