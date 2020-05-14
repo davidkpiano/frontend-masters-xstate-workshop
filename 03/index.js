@@ -3,41 +3,26 @@ import { createMachine, interpret } from 'xstate';
 const elBox = document.querySelector('#box');
 
 const machine = createMachine({
-  initial: 'inactive',
-  states: {
-    inactive: {
-      on: {
-        mousedown: {
-          target: 'active',
-        },
-      },
-    },
-    active: {
-      on: {
-        mouseup: {
-          target: 'inactive',
-        },
-      },
-    },
-  },
+  // Create your state machine here
+  // ...
 });
 
-const service = interpret(machine);
+// Create a service using interpret(...)
+const service = undefined;
 
-service.onTransition((state) => {
-  console.log(state);
+// Listen to state transitions and set
+// `elBox.dataset.state` to the state value as before.
+// ...
 
-  elBox.dataset.state = state.value;
-});
-
-service.start();
+// Start the service.
+// ...
 
 elBox.addEventListener('mousedown', (event) => {
-  // service.send({ type: 'mousedown', ... })
-  service.send(event);
+  // Send a mousedown event
+  // ...
 });
 
 elBox.addEventListener('mouseup', (event) => {
-  // service.send({ type: 'mousedown', ... })
-  service.send(event);
+  // Send a mouseup event
+  // ...
 });
