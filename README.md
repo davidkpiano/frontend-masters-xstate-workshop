@@ -8,6 +8,12 @@ Welcome to the [Frontend Masters](https://frontendmasters.com/) workshop on **Ja
 - Identify and eliminate edge cases
 - Visualize your logic as state machine diagrams
 
+## XState
+
+- GitHub repo: https://github.com/davidkpiano/xstate
+- Documentation: http://xstate.js.org/docs
+- Visualizer: http://xstate.js.org/viz
+
 ## Getting Started
 
 To run this workshop:
