@@ -1,4 +1,4 @@
-# Lesson 01 - Creating a State Machine
+# Exercise 01 - Creating a State Machine
 
 ## Goals
 

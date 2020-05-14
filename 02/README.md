@@ -1,4 +1,4 @@
-# Lesson 02 - XState
+# Exercise 02 - XState
 
 ## Goals
 
