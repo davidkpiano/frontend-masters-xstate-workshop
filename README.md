@@ -10,10 +10,11 @@ Welcome to the [Frontend Masters](https://frontendmasters.com/) workshop on **Ja
 
 ## [XState](https://slides.com/davidkhourshid/xstate-workshop?token=NuUhf7a4#/)
 
-- GitHub repo: https://github.com/davidkpiano/xstate
-- Documentation: http://xstate.js.org/docs
-- Visualizer: http://xstate.js.org/viz
-- Resources: https://statecharts.github.io/resources.html
+- [GitHub repo](https://github.com/davidkpiano/xstate)
+- [Documentation](http://xstate.js.org/docs)
+- [Visualizer](http://xstate.js.org/viz)
+- [Resources](https://statecharts.github.io/resources.html)
+- [Welcome to the world of Statecharts](https://statecharts.github.io/)
 
 ## Getting Started
 
