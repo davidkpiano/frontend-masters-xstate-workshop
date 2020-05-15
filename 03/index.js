@@ -7,7 +7,7 @@ const elBox = document.querySelector('#box');
 
 // After
 // FSM: ->inactve -mousedown-> active
-// FSM: ->inactve <-mouseup- active
+// FSM: inactve <-mouseup- active
 const machine = createMachine({
   initial: "inactive",
   states: {

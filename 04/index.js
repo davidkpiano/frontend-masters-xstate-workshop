@@ -4,9 +4,12 @@ const elBox = document.querySelector('#box');
 
 const setPoint = (context, event) => {
   // Set the data-point attribute of `elBox`
-  // ...
+  elBox.dataset.point = `(${event.clientX}, ${event.clientY})`;
+  console.log(`(${event.clientX}, ${event.clientY})`)
 };
 
+// FSM: ->idle -mousedown-> dragging
+// FSM: idle <-mouseup- dragging
 const machine = createMachine({
   initial: 'idle',
   states: {
@@ -14,7 +17,7 @@ const machine = createMachine({
       on: {
         mousedown: {
           // Add your action here
-          // ...
+          actions: setPoint,
           target: 'dragging',
         },
       },
@@ -26,6 +29,11 @@ const machine = createMachine({
         },
       },
     },
+  },
+},
+{
+  actions: {
+    setPoint,
   },
 });
 
