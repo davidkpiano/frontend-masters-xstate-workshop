@@ -13,6 +13,7 @@ Welcome to the [Frontend Masters](https://frontendmasters.com/) workshop on **Ja
 - GitHub repo: https://github.com/davidkpiano/xstate
 - Documentation: http://xstate.js.org/docs
 - Visualizer: http://xstate.js.org/viz
+- Resources: https://statecharts.github.io/resources.html
 
 ## Getting Started
 
