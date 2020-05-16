@@ -38,9 +38,17 @@ const resetPosition = assign({
   py: 0,
 });
 
-const dragDropMachine = createMachine({
+const isAuthorized = context => {
+  return !!context.user;
+};
+
+const updateUser = context => {
+  console.log(context.user.name)
+  elBox.textContent = context.user.name
+}
+const createDragDropMachine = user => createMachine({
   // The initial state should check auth status instead.
-  initial: 'idle',
+  initial: 'checkingAuth',
   context: {
     x: 0,
     y: 0,
@@ -48,12 +56,38 @@ const dragDropMachine = createMachine({
     dy: 0,
     px: 0,
     py: 0,
-    user: undefined,
+    user,
   },
   states: {
     // Add two states:
     // - checkingAuth (with transient transitions)
     // - unauthorized
+    checkingAuth: {
+      on: {
+        '': [
+          {
+            cond: isAuthorized,
+            actions: updateUser,
+            target: 'idle',
+          }, 
+          {
+            target: 'unauthorized',
+          }
+        ]
+      }
+    },
+    unauthorized: {
+      on: {
+        SIGN_IN: {
+          target: 'checkingAuth',
+          actions: assign({
+            user: (_, event) => {
+              return event.user;
+            },
+          }),
+        }
+      }
+    },
     idle: {
       on: {
         mousedown: {
@@ -80,7 +114,7 @@ const dragDropMachine = createMachine({
   },
 });
 
-const service = interpret(dragDropMachine);
+const service = interpret(createDragDropMachine(null));
 
 service.onTransition((state) => {
   elBox.dataset.state = state.value;
@@ -113,4 +147,13 @@ elBody.addEventListener('keyup', (e) => {
   if (e.key === 'Escape') {
     service.send('keyup.escape');
   }
+});
+
+elButton.addEventListener('click', () => {
+  service.send({
+    type: 'SIGN_IN',
+    user: {
+      name: 'David',
+    },
+  });
 });

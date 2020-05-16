@@ -8,11 +8,14 @@ Welcome to the [Frontend Masters](https://frontendmasters.com/) workshop on **Ja
 - Identify and eliminate edge cases
 - Visualize your logic as state machine diagrams
 
-## XState
+## [XState](https://slides.com/davidkhourshid/xstate-workshop?token=NuUhf7a4#/)
 
-- GitHub repo: https://github.com/davidkpiano/xstate
-- Documentation: http://xstate.js.org/docs
-- Visualizer: http://xstate.js.org/viz
+- [GitHub repo](https://github.com/davidkpiano/xstate)
+- [Documentation](http://xstate.js.org/docs)
+- [Visualizer](http://xstate.js.org/viz)
+- [Resources](https://statecharts.github.io/resources.html)
+- [Welcome to the world of Statecharts](https://statecharts.github.io/)
+- [Statecharts](https://spectrum.chat/statecharts)
 
 ## Getting Started
 
@@ -48,3 +51,5 @@ To navigate to a rendered exercise in the browser, change the directory in the U
 - Exercise 08: [📄 Readme](./08/README.md) | [🔗 Link](http://localhost:1234/08/index.html)
 - Exercise 09: [📄 Readme](./09/README.md) | [🔗 Link](http://localhost:1234/09/index.html)
 - Exercise 10: [📄 Readme](./10/README.md) | [🔗 Link](http://localhost:1234/10/index.html)
+- Exercise 11: [📄 Readme](./11/README.md) | [🔗 Link](http://localhost:1234/11/index.html)
+- Exercise 12: [📄 Readme](./12/README.md) | [🔗 Link](http://localhost:1234/12/index.html)

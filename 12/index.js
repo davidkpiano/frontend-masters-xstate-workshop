@@ -26,13 +26,24 @@ const machine = createMachine({
       invoke: {
         // Invoke your promise here.
         // The `src` should be a function that returns the source.
+        src: (context, event) => {
+          return randomFetch();
+        },
+        onDone: 'resolved',
+        onError: 'rejected',
       },
     },
     resolved: {
-      // Add a transition to fetch again
+      // Add a transition to fetch again      
+      on: {
+        FETCH: 'pending',
+      },
     },
     rejected: {
-      // Add a transition to fetch again
+      // Add a transition to fetch again      
+      on: {
+        FETCH: 'pending',
+      },
     },
   },
 });
