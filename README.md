@@ -15,6 +15,7 @@ Welcome to the [Frontend Masters](https://frontendmasters.com/) workshop on **Ja
 - [Visualizer](http://xstate.js.org/viz)
 - [Resources](https://statecharts.github.io/resources.html)
 - [Welcome to the world of Statecharts](https://statecharts.github.io/)
+- [Statecharts](https://spectrum.chat/statecharts)
 
 ## Getting Started
 
