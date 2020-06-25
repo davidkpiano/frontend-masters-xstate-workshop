@@ -19,3 +19,5 @@ npm install xstate
 ## Extra Credit
 
 - Get a feel for the shorthand and the object transition syntax. Which do you prefer?
+
+[Prev](../01/README.md) • [Next](../03/README.md)

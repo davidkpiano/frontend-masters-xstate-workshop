@@ -16,3 +16,5 @@ Use a history state to "remember" what the most recent mode (child state) of the
 
 - Set the `target` of the history state to set the default target when there is no history. Without this, the machine will just go to the initial state of the parent state, which works for most use-cases.
 - What if there were two types of dark modes? Try using deep history to remember the deepest state.
+
+[Prev](../09/README.md) • [Next](../11/README.md)

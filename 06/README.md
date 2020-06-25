@@ -13,3 +13,5 @@ Use a guarded transition and `context` to prevent the `#box` from being dragged 
 ## Extra Credit
 
 - Listen for `keyup` events on the body. When `Escape` is pressed, we should cancel dragging and reset the box to its original position. Where would this transition go?
+
+[Prev](../05/README.md) • [Next](../07/README.md)

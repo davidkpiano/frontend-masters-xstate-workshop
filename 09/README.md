@@ -12,3 +12,5 @@ When the <kbd>shift</kbd> key is pressed while dragging, we want the `#box` to o
 ## Extra Credit
 
 - Can you do something similar for the Y-axis? Naturally, we can't lock on the X-axis and Y-axis at the same time.
+
+[Prev](../08/README.md) • [Next](../10/README.md)
