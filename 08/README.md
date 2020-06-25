@@ -12,3 +12,5 @@ Ensure that you can't drag the box for more than 2 seconds.
 ## Extra Credit
 
 - How would you make the timeout configurable from the `context` instead?
+
+[Prev](../07/README.md) • [Next](../09/README.md)

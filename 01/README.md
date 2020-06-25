@@ -16,3 +16,5 @@ Create a state machine that toggles the `#box` between the `inactive` and `activ
 
 - Use object syntax instead of a `switch` statement instead.
 - Create a self-contained interpreter that uses a closure to keep track of the current state machine value. Get creative!
+
+[Prev](../00/README.md) • [Next](../02/README.md)

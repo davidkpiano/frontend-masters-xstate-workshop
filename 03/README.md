@@ -18,3 +18,5 @@ Interpret state machines by using an interpreter. The machine should toggle betw
 
 - Send the raw event from the event handler to the service instead. Notice how it fits the event object shape!
 - Practice stopping the service when you no longer need it with `service.stop()` (e.g., after 10 seconds or so).
+
+[Prev](../02/README.md) • [Next](../04/README.md)

@@ -15,3 +15,5 @@ Currently, when our statechart is in the `visible` state, we can only control it
 ## Extra Credit
 
 - Try and see if a history state can remember where the screen was. This requires _deep_ history, not shallow history.
+
+[Prev](../10/README.md) • [Next](../12/README.md)

@@ -15,3 +15,5 @@ We don't want the `#box` to be draggable unless we are authorized (i.e., there i
 ## Extra Credit
 
 - If we're not authorized, give us a chance to sign in. The sign in button is available on the page. What should this transition look like, and where should it transition to?
+
+[Prev](../06/README.md) • [Next](../08/README.md)

@@ -17,3 +17,5 @@ const user = {
 
 output(user);
 ```
+
+[Next](../01/README.md)
