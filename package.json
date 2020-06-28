@@ -4,7 +4,7 @@
   "description": "Frontend Masters XState Workshop",
   "main": "index.js",
   "scripts": {
-    "start": "parcel **/*.html",
+    "start": "parcel ./src/**/*.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +23,6 @@
   "devDependencies": {
     "concurrently": "^5.2.0",
     "parcel-bundler": "^1.12.4",
-    "sass": "^1.26.5"
+    "sass": "1.23.7"
   }
 }

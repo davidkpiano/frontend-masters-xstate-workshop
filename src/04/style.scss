@@ -1,4 +1,5 @@
-@import '../styles/index.scss';
+@import '../../styles/index.scss';
+
 
 #box {
   opacity: 0.5;
@@ -8,7 +9,7 @@
   }
 
   &:before {
-    content: attr(data-delta);
+    content: attr(data-point);
     position: absolute;
     bottom: 100%;
     margin-bottom: 0.5rem;
@@ -18,6 +19,5 @@
     color: white;
     font-family: monospace;
     border-radius: inherit;
-    white-space: nowrap;
   }
 }
