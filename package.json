@@ -21,6 +21,7 @@
     "xstate": "^4.9.1"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.0-rc.0",
     "concurrently": "^5.2.0",
     "parcel": "^2.0.0-beta.2",
     "sass": "1.23.7"
