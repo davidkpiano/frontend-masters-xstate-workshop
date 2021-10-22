@@ -9,7 +9,7 @@ Currently, when our statechart is in the `visible` state, we can only control it
 
 ## Tips
 
-- You sill need to nest `visible.light` and `visible.dark` to `visible.mode.light` and `visible.mode.dark` as well.
+- You still need to nest `visible.light` and `visible.dark` to `visible.mode.light` and `visible.mode.dark` as well.
 - Don't forget initial states! We're initially on `visible.mode.light` and `visible.brightness.bright`.
 
 ## Extra Credit
