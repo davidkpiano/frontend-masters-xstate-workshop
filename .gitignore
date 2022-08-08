@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Ignore parcel cache files
+.parcel-cache
